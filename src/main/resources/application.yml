@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Maillo
+  main:
+    banner-mode: off
