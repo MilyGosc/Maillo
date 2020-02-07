@@ -1,2 +1,6 @@
+# general
 language: java
 jdk: openjdk11
+# external
+services:
+  - mongodb
