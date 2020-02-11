@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 public class MongoUserDetailsServiceTest {
 
@@ -22,14 +24,14 @@ public class MongoUserDetailsServiceTest {
         user.setUsername("john");
         userRepository.save(user);
 
-        Assertions.assertNotNull(mongoUserDetailsService.loadUserByUsername("john"), "User does not exists");
+        assertNotNull(mongoUserDetailsService.loadUserByUsername("john"), "User does not exists");
 
         userRepository.delete(user);
     }
 
     @Test
     void loadUserByUsername_NonExistingUser_ShouldThrowException() {
-        Assertions.assertThrows(UsernameNotFoundException.class,
+        assertThrows(UsernameNotFoundException.class,
                 () -> mongoUserDetailsService.loadUserByUsername("ethan"), "User should not exists");
     }
 

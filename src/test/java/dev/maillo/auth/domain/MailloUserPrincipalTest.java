@@ -5,11 +5,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.util.Assert;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 public class MailloUserPrincipalTest {
@@ -24,8 +25,9 @@ public class MailloUserPrincipalTest {
         user.setRoles(Set.of("ROLE_USER"));
 
         UserDetails userDetails = new MailloUserPrincipal(user);
-        Assert.isInstanceOf(List.class, userDetails.getAuthorities(), "Authorities are not a List");
-        Assert.isTrue(userDetails.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_USER")),
+
+        assertTrue(userDetails.getAuthorities() instanceof List, "Authorities are not a List");
+        assertTrue(userDetails.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_USER")),
                 "Authorities list does not contain ROLE_USER");
     }
 }
