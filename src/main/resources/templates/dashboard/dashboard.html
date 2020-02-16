@@ -6,7 +6,94 @@
     <title>Dashboard | Maillo</title>
 </head>
 <body>
-<nav th:replace="fragments/core/layout :: topbar"></nav>
+
+<div class="d-flex" id="wrapper">
+
+    <th:block th:replace="fragments/core/layout :: sidebar"/>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <th:block th:replace="fragments/core/layout :: navbar"/>
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6 class="align-middle">Stats</h6>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button type="button" class="btn btn-primary btn-sm">Add new</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Loading data...</h5>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6 class="align-middle">Users</h6>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button type="button" class="btn btn-primary btn-sm">Add new</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
 
 <th:block th:replace="fragments/core/layout :: scripts"/>
 </body>
