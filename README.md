@@ -1,6 +1,8 @@
 ![Logo](https://projects.milygosc.pl/maillo/bucket/images/logo.png?v2)
 
-[![Travis (.org)](https://img.shields.io/travis/MilyGosc/Maillo)](https://travis-ci.org/MilyGosc/Maillo)
+[![Build status](https://img.shields.io/travis/MilyGosc/Maillo)](https://travis-ci.org/MilyGosc/Maillo)
+[![Codecov](https://img.shields.io/codecov/c/github/MilyGosc/Maillo/development-0.1.0)](https://codecov.io/gh/MilyGosc/Maillo/branch/development-0.1.0)
+
 
 # Maillo
 Maillo is the open-source email marketing tool built with Java 11 using Spring.
