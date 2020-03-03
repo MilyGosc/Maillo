@@ -7,6 +7,8 @@
 body {
     background: #f8f9fa;
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .9rem;
 }
 
 .container-fluid {
