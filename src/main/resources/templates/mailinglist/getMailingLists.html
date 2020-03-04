@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="fragments/core/layout :: styles"/>
+
+    <title>Dashboard | Maillo</title>
+</head>
+<body>
+
+<div class="d-flex" id="wrapper">
+
+    <th:block th:replace="fragments/core/layout :: sidebar"/>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <th:block th:replace="fragments/core/layout :: navbar"/>
+
+        <div class="container-fluid">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6 class="align-middle">Mailing lists</h6>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button type="button" class="btn btn-primary btn-sm">Add new</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="mailingList : ${mailingLists}">
+                                    <th scope="row" th:text="${mailingList.id}"></th>
+                                    <td th:text="${mailingList.name}"></td>
+                                    <td>Actions...</td>
+                                </tr>
+                                <tr th:if="${mailingLists.size() == 0}">
+                                    <td colspan="3" class="lead text-center">No lists were found...</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<th:block th:replace="fragments/core/layout :: scripts"/>
+</body>
+</html>
