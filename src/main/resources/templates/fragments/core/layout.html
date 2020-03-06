@@ -8,14 +8,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800&display=swap">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        <link rel="stylesheet" th:href="@{assets/styles/core.css}">
+        <link rel="stylesheet" th:href="@{/assets/styles/core.css}">
     </th:block>
 </head>
 <body>
 
 <div th:fragment="sidebar" class="border-right" id="sidebar-wrapper">
     <div class="sidebar-heading text-center">
-        <img th:src="@{assets/images/logo.png}" height="30px" alt="logo">
+        <img th:src="@{/assets/images/logo.png}" height="30px" alt="logo"/>
     </div>
     <div class="list-group list-group-flush">
         <a th:href="@{/dashboard}" class="list-group-item list-group-item-action">Dashboard</a>
