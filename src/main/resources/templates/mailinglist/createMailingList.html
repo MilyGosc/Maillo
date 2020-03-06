@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="fragments/core/layout :: styles"/>
+
+    <title>Create mailing list | Maillo</title>
+</head>
+<body>
+
+<div class="d-flex" id="wrapper">
+
+    <th:block th:replace="fragments/core/layout :: sidebar"/>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <th:block th:replace="fragments/core/layout :: navbar"/>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col">
+                                    <h6 class="align-middle">Create mailing list</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="name">Name <span class="text-danger">*</span></label>
+                                    <input name="name" type="text" id="name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea name="description" id="description" class="form-control" rows="2"></textarea>
+                                </div>
+                                <div class="d-inline-block">
+                                    <a th:href="@{/mailing-list}" class="btn btn-light">Back</a>
+                                </div>
+                                <div class="d-inline-block float-right">
+                                    <button type="submit" class="btn btn-primary">Create</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<th:block th:replace="fragments/core/layout :: scripts"/>
+</body>
+</html>

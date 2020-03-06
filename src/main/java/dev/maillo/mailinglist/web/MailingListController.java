@@ -23,4 +23,9 @@ public class MailingListController {
         model.addAttribute("mailingLists", mailingLists);
         return "mailinglist/getMailingLists";
     }
+
+    @GetMapping("/mailing-list/create")
+    public String createMailingList() {
+        return "mailinglist/createMailingList";
+    }
 }
