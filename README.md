@@ -7,7 +7,7 @@
 # Maillo
 Maillo is the open-source email marketing tool built with Java 11 using Spring.
 
-**This project is still development phase and isn't ready to use yet.**
+**This project is still in development phase and isn't ready to use yet.**
 
 ### Supported Email Sending Services
 * Amazon Simple Email Service (will be available in Alpha)
