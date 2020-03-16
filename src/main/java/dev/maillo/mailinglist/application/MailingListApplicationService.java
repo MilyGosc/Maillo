@@ -2,6 +2,7 @@ package dev.maillo.mailinglist.application;
 
 import dev.maillo.mailinglist.application.command.CreateMailingListCommand;
 import dev.maillo.mailinglist.domain.MailingList;
+import dev.maillo.mailinglist.domain.MailingListFactory;
 import dev.maillo.mailinglist.domain.MailingListRepository;
 import dev.maillo.mailinglist.domain.service.UserService;
 import dev.maillo.user.domain.User;
@@ -19,6 +20,9 @@ public class MailingListApplicationService {
     private MailingListRepository mailingListRepository;
 
     @Autowired
+    private MailingListFactory mailingListFactory;
+
+    @Autowired
     private UserService userService;
 
     public List<MailingList> getUserMailingLists(String username) throws UserNotFoundException {
@@ -30,11 +34,9 @@ public class MailingListApplicationService {
     public void create(CreateMailingListCommand command) throws UserNotFoundException {
         User user = userService.getByUsername(command.getIssuerUsername());
 
-        // todo: move aggregate building to factory
-        MailingList mailingList = new MailingList();
-        mailingList.setName(command.getName());
-        mailingList.setDescription(command.getDescription());
+        MailingList mailingList = mailingListFactory.create(command);
         mailingList.grantAccess(user.getId());
+
         mailingListRepository.save(mailingList);
 
         userService.addMailingList(user.getId(), mailingList.getId());

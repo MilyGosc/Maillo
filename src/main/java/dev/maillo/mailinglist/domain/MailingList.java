@@ -12,6 +12,14 @@ public class MailingList {
     private String description;
     private List<String> users = new ArrayList<>();
 
+    public MailingList() {
+    }
+
+    public MailingList(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public void grantAccess(String userId) {
         if (userId == null || userId.isBlank()) {
             throw new IllegalArgumentException("User id can not be empty");
